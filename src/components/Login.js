@@ -86,11 +86,13 @@ export const Login = () => {
                         </div>
 
                         <div className="remember-forgot">
-                          <Button href = "#" size="medium" color="success">Forgot Password?</Button>
+                          {/* <Button size="medium" color="white">Forgot Password?</Button> */}
                             
                         </div>
 
-                        <button type="submit">Login</button>
+                        <Button variant="contained" size="medium">
+          Login
+        </Button>
                     </Grid>
                     <Grid xs={4} sx={{ textAlign: "center" }}></Grid>
                 </Grid>

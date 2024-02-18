@@ -9,7 +9,7 @@ import {
 } from "@mui/icons-material";
 // import { Camera } from "react-camera-pro";
 import { Webcam } from "react-webcam";
-import { io } from "socket.io-client";
+// import { io } from "socket.io-client";
 
 let studyTime = 1.5e6;
 let shortBreak = 600000;
@@ -58,13 +58,13 @@ export const Focus = () => {
     // const webcamRef = useRef(null);
 
 
-    const playCameraStream = () => {
-        if (videoRef.current) {
-            videoRef.current.play();
-        }
-    };
+    // const playCameraStream = () => {
+    //     if (videoRef.current) {
+    //         videoRef.current.play();
+    //     }
+    // };
 
-    const videoRef = useRef();
+    // const videoRef = useRef();
     // useEffect(() => {
 	// 	async function getCameraStream() {
 	// 		const stream = await navigator.mediaDevices.getUserMedia({
@@ -76,16 +76,16 @@ export const Focus = () => {
 	// 			videoRef.current.srcObject = stream;
     //             const { videoWidth, videoHeight } = videoRef.current;
 
-    //             const socket = io("localhost:5000/", {
-	// 				transports: ["websocket"],
-	// 				cors: {
-	// 					origin: "http://localhost:3000/",
-	// 				},
-	// 			});
+    //             // const socket = io("localhost:4999/", {
+	// 			// 	transports: ["websocket"],
+	// 			// 	cors: {
+	// 			// 		origin: "http://localhost:3000/",
+	// 			// 	},
+	// 			// });
 
-	// 			socket.on("connect", (data) => {
-	// 				console.log(data);
-	// 			});
+	// 			// socket.on("connect", (data) => {
+	// 			// 	console.log(data);
+	// 			// });
 
 
     //             var canvas = document.getElementById("canvas");
@@ -97,7 +97,7 @@ export const Focus = () => {
 	// 				var data = canvas.toDataURL("image/jpeg", 0.5);
 	// 				context.clearRect(0, 0, videoWidth, videoHeight);
 	// 				// socket.emit("image", data);
-    //                 fetch("http://localhost:5000", {
+    //                 fetch("http://localhost:4999", {
 	// 					method: "POST",
 	// 					headers: {
 	// 						Accept: "application/json",
@@ -111,23 +111,23 @@ export const Focus = () => {
 	// 					);
 	// 			}, 1000 / FPS);
 
-	// 			socket.on("processed_image", function (image) {
-    //                 const image_id = document.getElementById("image");
-	// 				image_id.src = image;
-    //                 console.log("hehe")
-	// 			});
+	// 			// socket.on("processed_image", function (image) {
+    //             //     const image_id = document.getElementById("image");
+	// 			// 	image_id.src = image;
+    //             //     console.log("hehe")
+	// 			// });
 
-    //             socket.on("siddhant", (data) => {
-    //                 console.log(data);
-    //             })
+    //             // socket.on("siddhant", (data) => {
+    //             //     console.log(data);
+    //             // })
 
-	// 			socket.on("disconnect", (data) => {
-	// 				console.log(data);
-	// 			});
+	// 			// socket.on("disconnect", (data) => {
+	// 			// 	console.log(data);
+	// 			// });
 
-	// 			return function cleanup() {
-	// 				socket.disconnect();
-	// 			};
+	// 			// return function cleanup() {
+	// 			// 	socket.disconnect();
+	// 			// };
 	// 		}
 	// 	}
 
@@ -146,15 +146,15 @@ export const Focus = () => {
 						Focus
 					</Typography>
 					{/* <Webcam ref={webcamRef} onUserMedia={} /> */}
-                    <canvas id="canvas">
+                    {/* <canvas id={'canvas'}>
                         <video
                             ref={videoRef}
-                            // onCanPlay={() => playCameraStream()}
+                            onCanPlay={() => playCameraStream()}
                         />
                     </canvas>
 					<div class="video">
 					    <img id="photo" width="250" height="250" />
-					</div>
+					</div> */}
 				</Grid>
 
 
