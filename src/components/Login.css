@@ -206,6 +206,6 @@ body {
     color:white;
   }
 
-  .remember-forgot {
-    text-emphasis-color: white;
+  .remember-forgot:hover{
+    fill-opacity: 70;
   }
