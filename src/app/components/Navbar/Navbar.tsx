@@ -1,7 +1,6 @@
 "use client";
 
-import { Toolbar, Typography, Button, Box } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
+import { Toolbar } from "@mui/material";
 import Link from "next/link";
 import { useEffect } from "react";
 
@@ -27,17 +26,15 @@ export const Navbar = () => {
 
   return (
     <Toolbar className="navbar pt-2 pb-1 w-full fixed z-50 select-none flex justify-evenly align-middle">
-      <Typography
-        fontSize="40"
-        fontWeight="500"
-        fontFamily={"Bebas Neue"}
+      <p
         className="text-slate-100 text-5xl cursor-pointer flex-grow h-10"
+        style={{ fontFamily: "Bebas Neue" }}
       >
         <Link href="/">Focus Up!</Link>
-      </Typography>
-      <Typography
-        fontFamily={"Bebas Neue"}
+      </p>
+      <p
         className="text-slate-100 text-xl cursor-pointer flex-grow"
+        style={{ fontFamily: "Bebas Neue" }}
       >
         <Link
           href="/checklist"
@@ -45,10 +42,10 @@ export const Navbar = () => {
         >
           Checklist
         </Link>
-      </Typography>
-      <Typography
-        fontFamily={"Bebas Neue"}
+      </p>
+      <p
         className="text-slate-100 text-xl cursor-pointer flex-grow"
+        style={{ fontFamily: "Bebas Neue" }}
       >
         <Link
           href="/focus"
@@ -56,10 +53,10 @@ export const Navbar = () => {
         >
           Focus
         </Link>
-      </Typography>
-      <Typography
-        fontFamily={"Bebas Neue"}
+      </p>
+      <p
         className="text-slate-100 text-xl cursor-pointer flex-grow"
+        style={{ fontFamily: "Bebas Neue" }}
       >
         <Link
           href="/about"
@@ -67,29 +64,7 @@ export const Navbar = () => {
         >
           About
         </Link>
-      </Typography>
-      {/* <Typography
-				fontFamily={"Bebas Neue"}
-				sx={{
-					cursor: "pointer",
-					flexGrow: 1,
-					userSelect: "none",
-					"&:hover": {
-						color: "#c7d8ed",
-					},
-					["@media (max-width:2px)"]: {
-						paddingBottom: "1rem",
-					},
-					fontSize: 20,
-				}}
-			>
-				<Link
-					to="/resources"
-					style={{ textDecoration: "none", color: "#ebebeb" }}
-				>
-					Resources
-				</Link>
-			</Typography> */}
+      </p>
     </Toolbar>
   );
 };

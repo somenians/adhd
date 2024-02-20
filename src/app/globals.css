@@ -2,14 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Jacquarda+Bastarda+9&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
-body {
-  font-family: "Bebas Neue", sans-serif;
-  /* background-color: #131316;
-    color: #f8f0E5; */
-  color: #ebebeb;
-}
-
 section {
   display: grid;
   place-items: center;
@@ -29,19 +21,15 @@ section {
 
   font-family: "Bebas Neue", sans-serif;
   /*  alternate color scheme:
-        #f5e1c0 as background
-        #eacfa2 as header
-        #fac670 as something else
-    */
+  #f5e1c0 as background
+  #eacfa2 as header
+  #fac670 as something else
+  */
 }
 
 body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: "Poppins", sans-serif;
-
-  /* background-color: #102C57; */
+  @apply antialiased m-0;
+  color: #ebebeb;
   background-color: hsla(217, 50%, 52%, 1);
   background-image: radial-gradient(
       at 91% 83%,
@@ -49,13 +37,6 @@ body {
       transparent 50%
     ),
     radial-gradient(at 0% 100%, hsla(2, 32%, 84%, 0.33) 0px, transparent 50%);
-  /* background:
-        linear-gradient(
-            90deg,
-            rgba(158, 168, 255, 0.6),
-            rgba(55, 181, 255, 0.6)
-        ); */
-  /* color: #f8f0E5; */
 }
 
 code {

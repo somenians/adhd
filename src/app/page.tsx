@@ -1,18 +1,8 @@
 "use client";
 
-import SendIcon from "@mui/icons-material/Send";
-import {
-  Grid,
-  Stack,
-  Typography,
-  Box,
-  Item,
-  Button,
-  IconButton,
-} from "@mui/material";
-import { Fade, Hinge, JackInTheBox, Zoom, Bounce } from "react-awesome-reveal";
-import React, { useRef, useState, Suspense } from "react";
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
+import { Button } from "@mui/material";
+import React, { useRef, useState } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
 
 import Brain from "./BrainModel";
 import PlayCircleFilledWhiteRoundedIcon from "@mui/icons-material/PlayCircleFilledWhiteRounded";
@@ -21,7 +11,8 @@ import PlayCircleFilledWhiteRoundedIcon from "@mui/icons-material/PlayCircleFill
 //     const gltf = useLoader(GLTFLoader, './static/brain/scene.gltf')
 //     return <primitive object={gltf.scene} />
 // }
-function Cube(props: object) {
+// braindead cube rendering function
+function Cube(props: any) {
   // This reference gives us direct access to the THREE.Mesh object
   const ref = useRef();
   // Hold state for hovered and clicked events
@@ -33,7 +24,6 @@ function Cube(props: object) {
   // Return the view, these are regular Threejs elements expressed in JSX
   return (
     <mesh
-      {...props}
       ref={ref}
       // scale={clicked ? 1.5 : 1}
       onClick={(event) => click(!clicked)}
@@ -50,51 +40,30 @@ export default function Home() {
   return (
     <section className="home">
       {/* <Fade triggerOnce="true" delay={3}> */}
-      <Grid container rowSpacing={4} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-        <Grid id="" xs={6} sx={{ alignItems: "center" }}>
-          <Stack
-            pacing={{ xs: 4, sm: 6 }}
-            direction="column"
-            useFlexGap
-            flexWrap="wrap"
-            alignItems="center"
+      <div className="flex flex-row flex-wrap mx-auto gap-20">
+        <div className="flex flex-col justify-center gap-4 flex-grow">
+          <p
+            // sx={{
+            // 	flexGrow: 1,
+            // }}
+            // className="title"
+            // alignSelf={"center"}
+            className="text-9xl font-bold text-center"
+            style={{
+              fontFamily: "Bebas Neue, sans-serif",
+            }}
           >
-            <Typography
-              fontSize={25}
-              fontWeight="500"
-              // sx={{
-              // 	flexGrow: 1,
-              // }}
-              className="title"
-              alignSelf={"center"}
-            >
-              Focus Up!
-            </Typography>
-            <Typography
-              fontSize={15}
-              fontWeight="500"
-              // sx={{
-              // 	flexGrow: 1,
-              // }}
-              className="desc"
-              alignSelf={"center"}
-            >
-              Your ultimate productivity companion.
-            </Typography>
-            <br></br>
-            <Button
-              href="/about"
-              sx={{ marginTop: 5 }}
-              variant="contained"
-              size="large"
-              // endIcon={<SendIcon />}
-              alignSelf={"center"}
-            >
-              Get Started
-            </Button>
-          </Stack>
-        </Grid>
-        <Grid item xs={6}>
+            Focus Up!
+          </p>
+          <p className="text-xl text-center flex-grow">
+            Your ultimate productivity companion.
+          </p>
+          <Button href="/about" variant="contained" className="mx-auto">
+            Get Started
+          </Button>
+        </div>
+
+        <div className="flex-shrink flex-grow">
           <Canvas>
             <ambientLight intensity={Math.PI / 2} />
             <spotLight
@@ -111,12 +80,8 @@ export default function Home() {
             />
             <Cube position={[-1.2, 0, 0]} />
           </Canvas>
-          {/* <Canvas>
-                            <Brain />
-                        </Canvas> */}
-        </Grid>
-      </Grid>
-      {/* </Fade> */}
+        </div>
+      </div>
     </section>
   );
 }
